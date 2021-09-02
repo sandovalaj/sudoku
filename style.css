@@ -1,0 +1,47 @@
+:root { 
+    font: 25px/1.5 'Karla', sans-serif;
+}
+
+body, body * {
+    font: unset;
+    padding: unset;
+    margin: unset;
+    background: unset;
+    border: unset;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 5% 1fr 2fr 1fr 5%;
+}
+
+.main-grid {
+    grid-column: 3;
+    min-height: 80vh;
+}
+
+td {
+    align-content: center;
+    min-height: 3rem;
+    min-width: 3rem;
+    outline: 1px solid black;
+    padding: 0.3rem;
+}
+
+input {
+    text-align: center;
+    font-size: 2rem;
+    border: 1px solid lightgray;
+    width: 3rem;
+    height: 3rem;
+}
+
+button {
+    background-color: lightgray;
+}
+
+button:active {
+    background-color: darkgray;
+}
+
+

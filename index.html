@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku!</title>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="-bootstrap-grid.css" rel="stylesheet">
+    <link href="adebugger.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div class="container">
+        <table class="main-grid col-6 offset-3">
+            <tr id="row1">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c00" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c01" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c02" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c03" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c04" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c05" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c06" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c07" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c08" name="input"></td>
+            </tr>
+            <tr id="row2">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c10" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c11" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c12" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c13" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c14" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c15" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c16" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c17" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c18" name="input"></td>
+            </tr>
+            <tr id="row3">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c20" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c21" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c22" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c23" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c24" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c25" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c26" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c27" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c28" name="input"></td>
+            </tr>
+            <tr id="row4">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c30" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c31" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c32" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c33" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c34" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c35" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c36" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c37" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c38" name="input"></td>
+            </tr>
+            <tr id="row5">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c40" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c41" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c42" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c43" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c44" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c45" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c46" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c47" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c48" name="input"></td>
+            </tr>
+            <tr id="row6">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c50" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c51" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c52" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c53" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c54" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c55" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c56" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c57" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c58" name="input"></td>
+            </tr>
+            <tr id="row7">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c60" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c61" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c62" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c63" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c64" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c65" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c66" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c67" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c68" name="input"></td>
+            </tr>
+            <tr id="row8">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c70" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c71" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c72" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c73" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c74" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c75" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c76" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c77" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c78" name="input"></td>
+            </tr>
+            <tr id="row9">
+                <td><input type="text" autocomplete="off" maxlength="1" id="c80" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c81" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c82" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c83" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c84" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c85" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c86" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c87" name="input"></td>
+                <td><input type="text" autocomplete="off" maxlength="1" id="c88" name="input"></td>
+            </tr>
+        </table>
+
+        <button data-test>Test</button>
+        <script src="-trial.js" defer></script>
+    </div>
+    
+</body>
+</html>
