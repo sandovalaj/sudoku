@@ -7,8 +7,7 @@
     <title>Sudoku!</title>
 
     <link href="style.css" rel="stylesheet">
-    <link href="-bootstrap-grid.css" rel="stylesheet">
-    <link href="adebugger.css" rel="stylesheet">
+    <link href="-debugger.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 
     
@@ -117,8 +116,14 @@
             </tr>
         </table>
 
-        <button data-test>Test</button>
+        <div class="rowButtons">
+            <button data-newGame class="newGame">New Game</button>
+            <button data-checkAnswers class="checkAnswers">Check Answers</button>
+            <button data-reset class="reset">Reset Board</button>
+        </div>
+
         <script src="-trial.js" defer></script>
+        <script src="script.js" defer></script>
     </div>
     
 </body>

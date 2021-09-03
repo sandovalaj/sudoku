@@ -10,6 +10,10 @@ body, body * {
     border: unset;
 }
 
+div {
+    padding-top: 1rem;
+}
+
 .container {
     display: grid;
     grid-template-columns: 5% 1fr 2fr 1fr 5%;
@@ -17,27 +21,47 @@ body, body * {
 
 .main-grid {
     grid-column: 3;
-    min-height: 80vh;
+    min-height: 40vh;
 }
 
 td {
-    align-content: center;
-    min-height: 3rem;
-    min-width: 3rem;
+    text-align: center; 
+    vertical-align: middle;
+    height: 2rem;
+    width: 2rem;
     outline: 1px solid black;
     padding: 0.3rem;
 }
 
 input {
     text-align: center;
-    font-size: 2rem;
-    border: 1px solid lightgray;
-    width: 3rem;
-    height: 3rem;
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+input:disabled {
+    color: gray;
+}
+
+.rowButtons {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.rowButtons *:not(:last-child) {
+    margin-right: 1rem;
 }
 
 button {
     background-color: lightgray;
+    padding: 0.3rem 0.5rem;
+}
+
+button:hover {
+    background-color: rgba(211, 211, 211, 0.904);
 }
 
 button:active {
