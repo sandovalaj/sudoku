@@ -25,6 +25,18 @@ class Sudoku {
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
         ];
+
+        this.inputGrid = [   
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ];
     }
 
     createSolution() {
@@ -47,7 +59,7 @@ class Sudoku {
                     }
                     this.solutionGrid[row][column] = gridValue;
                     counter++;
-                } while (this.columnChecker(column) || this.blockChecker(row, column))
+                } while (this.columnChecker(column, this.solutionGrid) || this.blockChecker(row, column, this.solutionGrid))
 
                 
             }
@@ -71,22 +83,22 @@ class Sudoku {
         return false;
     }
 
-    columnChecker(column) {
+    columnChecker(column,grid) {
         let hash = [];
 
         for (let row = 0; row < this.total; row++) {  
-            if (hash.includes(this.solutionGrid[row][column])) {
+            if (hash.includes(grid[row][column])) {
                 return true;
             }
-            else if (this.solutionGrid[row][column] != 0) {
-                hash.push(this.solutionGrid[row][column]);
+            else if (grid[row][column] != 0) {
+                hash.push(grid[row][column]);
             }
         }
 
         return false;
     }
 
-    blockChecker(row, column) {
+    blockChecker(row, column, grid) {
         let hash = [];
 
         while (row % this.totalSquared != 0) 
@@ -98,11 +110,11 @@ class Sudoku {
 
         for (let a = 0; a < this.totalSquared; a++) {
             for (let b = 0; b < this.totalSquared; b++) {
-                if (hash.includes(this.solutionGrid[row + a][column + b])) {
+                if (hash.includes(grid[row + a][column + b])) {
                     return true;
                 }
-                else if (this.solutionGrid[row + a][column + b] != 0) {
-                    hash.push(this.solutionGrid[row + a][column + b]);
+                else if (grid[row + a][column + b] != 0) {
+                    hash.push(grid[row + a][column + b]);
                 }
            }
         }
@@ -118,7 +130,7 @@ class Sudoku {
         }
         //put blanks in solutionGrid
         for (let row = 0; row < 9; row++) {
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 5; i++) { //6
                 while (true) {
                     let column = Math.floor(Math.random() * 9);
     
@@ -139,6 +151,7 @@ class Sudoku {
                 if (this.boardGrid[a][b] === 0) {
                     document.getElementById(id).value = '';
                     document.getElementById(id).disabled = false;
+                    console.log(this.solutionGrid[a][b] + " "); //------------------------erase pls
                 } else {
                     document.getElementById(id).value = this.boardGrid[a][b];
                     document.getElementById(id).disabled = true;
@@ -148,16 +161,34 @@ class Sudoku {
     }
 
     solutionChecker() {
-        //take html input
-        //convert to grid
-        //use row, column, blockchecker
-        //return html coordinates that is wrong
-            //highlight wrong
-        //if correct all, return winning statement
-    }
+        var id;
+        for (let a = 0; a < 9; a++) {
+            for (let b = 0; b < 9; b++) {
+                id = "c" + a + b;
 
-    input() {
+                this.inputGrid[a][b] = document.getElementById(id).value;
+            }
+        }
+        
+        let solutionCorrect = true;
+        for (let i = 0; i < this.total; i++) {
+            if (this.rowChecker(i, this.inputGrid)) {
+                console.log("wrong row " + i);
+                solutionCorrect = false;
+            }
 
+            if (this.columnChecker(i, this.inputGrid)) {
+                console.log("wrong column " + i);
+                solutionCorrect = false;
+            }
+
+            if (this.blockChecker(Math.floor(i / 3) * 3, (i % 3) * 3, this.inputGrid)) {
+                console.log("wrong block " + i);
+                solutionCorrect = false;
+            }
+        }
+
+        return solutionCorrect;
     }
 }
 
@@ -179,11 +210,16 @@ newGame.addEventListener('click', button => {
 })
 
 checkAnswers.addEventListener('click', button => {
-
+    if (!sudoku.solutionChecker())
+        alert("You wrong");
+    else 
+        alert("You are right");
+    
 })
 
 reset.addEventListener('click', button => {
     sudoku.displayGrid();
 })
+   
 
         
